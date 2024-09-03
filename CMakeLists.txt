@@ -17,3 +17,5 @@ add_definitions(${LLVM_DEFINITIONS_LIST})
 
 list(APPEND CMAKE_MODULE_PATH "${LLVM_CMAKE_DIR}")
 include(AddLLVM)
+
+add_subdirectory(annotate_alwaysinline)
