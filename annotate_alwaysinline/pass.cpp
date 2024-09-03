@@ -11,6 +11,9 @@ bool AnnotateAllAlwaysInline::runOnModule(Module &M) {
     if (F.hasFnAttribute(Attribute::AlwaysInline))
       continue;
 
+    if (F.hasFnAttribute(Attribute::NoInline))
+      continue;
+
     F.addFnAttr(Attribute::AlwaysInline);
     changed = true;
   }
